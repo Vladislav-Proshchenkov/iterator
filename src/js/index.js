@@ -1,35 +1,14 @@
-import Team from './team';
+import Character from './Character.js';
+import Team from './Team.js';
 
-const bowman = {
-  name: 'Лучник',
-  type: 'Bowman',
-  health: 50,
-  level: 1,
-  attack: 40,
-  defence: 10
-};
-
-const swordsman = {
-  name: 'Мечник',
-  type: 'Swordsman',
-  health: 70,
-  level: 1,
-  attack: 40,
-  defence: 10
-};
-
-const magician = {
-  name: 'Маг',
-  type: 'Magician',
-  health: 50,
-  level: 1,
-  attack: 40,
-  defence: 10
-};
+const bowman = new Character('Лучник', 'Bowman', 50, 1, 40, 10);
+const swordsman = new Character('Мечник', 'Swordsman', 70, 1, 30, 20);
+const magician = new Character('Маг', 'Magician', 40, 1, 20, 40);
 
 const team = new Team();
 team.addAll(bowman, swordsman, magician);
 
-for (const member of team) {
-  console.log(member);
+// Итерация по команде
+for (const character of team) {
+  console.log(character);
 }
